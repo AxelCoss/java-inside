@@ -4,15 +4,15 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class PointTest {
+public class PointTest {
 
     @Test
-    void x() {
+    public void x() {
         assertEquals(3, new Point(3, 5).x());
     }
 
     @Test
-    void y() {
+    public void y() {
         assertEquals(5, new Point(3, 5).y());
     }
 
