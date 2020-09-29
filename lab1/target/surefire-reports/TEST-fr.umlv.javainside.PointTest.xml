@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="FR"/>
     <property name="sun.boot.library.path" value="/usr/local/apps/alternatives/java/jdk-15/lib"/>
-    <property name="sun.java.command" value="/home/6if1/acossine/git/java-inside/lab1/target/surefire/surefirebooter7601052206500618916.jar /home/6if1/acossine/git/java-inside/lab1/target/surefire 2020-09-29T09-11-26_727-jvmRun1 surefire1373776140643207595tmp surefire_015469374070814360256tmp"/>
+    <property name="sun.java.command" value="/home/6if1/acossine/git/java-inside/lab1/target/surefire/surefirebooter15783008978928615861.jar /home/6if1/acossine/git/java-inside/lab1/target/surefire 2020-09-29T11-42-05_388-jvmRun1 surefire5753730602544606908tmp surefire_01613997302111923007tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/6if1/acossine/git/java-inside/lab1/target/test-classes:/home/6if1/acossine/git/java-inside/lab1/target/classes:/home/6if1/acossine/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.0/junit-jupiter-api-5.7.0.jar:/home/6if1/acossine/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/6if1/acossine/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/6if1/acossine/.m2/repository/org/junit/platform/junit-platform-commons/1.7.0/junit-platform-commons-1.7.0.jar:/home/6if1/acossine/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.0/junit-jupiter-engine-5.7.0.jar:/home/6if1/acossine/.m2/repository/org/junit/platform/junit-platform-engine/1.7.0/junit-platform-engine-1.7.0.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -27,7 +27,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/home/6if1/acossine/git/java-inside/lab1/target/surefire/surefirebooter7601052206500618916.jar"/>
+    <property name="surefire.real.class.path" value="/home/6if1/acossine/git/java-inside/lab1/target/surefire/surefirebooter15783008978928615861.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="15+36-1562"/>
     <property name="user.name" value="acossine"/>
@@ -52,5 +52,5 @@
     <property name="java.class.version" value="59.0"/>
   </properties>
   <testcase name="x" classname="fr.umlv.javainside.PointTest" time="0.012"/>
-  <testcase name="y" classname="fr.umlv.javainside.PointTest" time="0"/>
+  <testcase name="y" classname="fr.umlv.javainside.PointTest" time="0.001"/>
 </testsuite>
