@@ -7,7 +7,7 @@
     <artifactId>java-inside</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
-  <artifactId>lab1</artifactId>
+  <artifactId>lab2</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>lab1</name>
+  <name>lab2</name>
 </project>
