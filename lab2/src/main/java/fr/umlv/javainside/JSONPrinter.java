@@ -6,7 +6,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.RecordComponent;
 import java.lang.reflect.UndeclaredThrowableException;
-import java.util.Arrays;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class JSONPrinter {
@@ -19,10 +19,12 @@ public class JSONPrinter {
         }
     };
 
+    private static final Map<RecordComponent, String> recordComponentNameCache = new HashMap<RecordComponent, String>();
+
     public static String toJSON(Record record) {
         return "{"+ Arrays.stream(getRecordComponentsUsingCache(record))
                 .map(recordComponent -> '\"' +
-                        recordComponentName(recordComponent) +
+                        getRecordComponentNameUsingCache(recordComponent) +
                         "\": " +
                         addQuoteIfIsStringTypeComponent(recordComponent) +
                         invokeAccessor(recordComponent.getAccessor(), record) +
@@ -53,6 +55,19 @@ public class JSONPrinter {
         }
     }
 
+    private static RecordComponent[] getRecordComponentsUsingCache(Record record) {
+        return recordComponentCache.get(record.getClass());
+    }
+
+    private static String getRecordComponentNameUsingCache(RecordComponent recordComponent) {
+        String recordComponentName = recordComponentNameCache.get(recordComponent);
+        if (recordComponentName != null)
+            return recordComponentName;
+        recordComponentName = recordComponentName(recordComponent);
+        recordComponentNameCache.put(recordComponent, recordComponentName);
+        return recordComponentName;
+    }
+
     private static String recordComponentName(RecordComponent recordComponent) {
         JSONProperty jsonPropertyAnnotation = recordComponent.getAnnotation(JSONProperty.class);
 
@@ -61,9 +76,5 @@ public class JSONPrinter {
         if (jsonPropertyAnnotation.value().equals(""))
             return recordComponent.getName().replace('_', '-');
         return jsonPropertyAnnotation.value();
-    }
-
-    private static RecordComponent[] getRecordComponentsUsingCache(Record record) {
-        return recordComponentCache.get(record.getClass());
     }
 }
