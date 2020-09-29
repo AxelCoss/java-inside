@@ -1,6 +1,9 @@
 package fr.umlv.javainside;
 
+import fr.umlv.javainside.annotation.JSONProperty;
+
 import java.io.UncheckedIOException;
+import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.RecordComponent;
@@ -12,7 +15,7 @@ public class JSONPrinter {
     public static String toJSON(Record record) {
         return "{"+ Arrays.stream(record.getClass().getRecordComponents())
                 .map(recordComponent -> '\"' +
-                        recordComponent.getName() +
+                        recordComponentName(recordComponent) +
                         "\": " +
                         addQuoteIfIsStringTypeComponent(recordComponent) +
                         invokeAccessor(recordComponent.getAccessor(), record) +
@@ -41,5 +44,13 @@ public class JSONPrinter {
                 throw new RuntimeException(error);
             throw new UndeclaredThrowableException(cause);
         }
+    }
+
+    private static String recordComponentName(RecordComponent recordComponent) {
+        JSONProperty jsonPropertyAnnotation = recordComponent.getAnnotation(JSONProperty.class);
+
+        if (jsonPropertyAnnotation == null)
+            return recordComponent.getName();
+        return jsonPropertyAnnotation.value();
     }
 }
