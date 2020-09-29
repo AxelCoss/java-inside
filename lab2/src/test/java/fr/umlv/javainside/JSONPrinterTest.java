@@ -27,6 +27,8 @@ public class JSONPrinterTest {
 
     record Book(@JSONProperty("book-title") String title, int year) { }
 
+    record BookWithEmptyAnnotation(@JSONProperty String book_title, int year) { }
+
     @Test
     public void convertARecordWithTwoStringArgumentIntoAJSONString() {
         Person person = new Person("Petit", "Jean");
@@ -48,6 +50,15 @@ public class JSONPrinterTest {
     @Test
     public void convertARecordWithAnAnnotatedComponentIntoAJSONString() {
         Book book = new Book("The journey", 2);
+
+        Map<String, Object> expectedJsonMap = IncompleteJSONParser.parse("{ \"book-title\":\"The journey\", \"year\":2 }");
+
+        assertEquals(expectedJsonMap, IncompleteJSONParser.parse(JSONPrinter.toJSON(book)));
+    }
+
+    @Test
+    public void convertARecordWithAnEmptyAnnotatedComponentIntoAJSONString() {
+        BookWithEmptyAnnotation book = new BookWithEmptyAnnotation("The journey", 2);
 
         Map<String, Object> expectedJsonMap = IncompleteJSONParser.parse("{ \"book-title\":\"The journey\", \"year\":2 }");
 
