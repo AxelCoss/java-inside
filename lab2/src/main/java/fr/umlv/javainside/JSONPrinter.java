@@ -7,37 +7,36 @@ import java.lang.reflect.Method;
 import java.lang.reflect.RecordComponent;
 import java.lang.reflect.UndeclaredThrowableException;
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class JSONPrinter {
 
-
-    private static final ClassValue<RecordComponent[]> recordComponentCache = new ClassValue<RecordComponent[]>() {
+    private static final ClassValue<List<Function<Record, String>>> cache = new ClassValue<List<Function<Record, String>>>() {
         @Override
-        protected RecordComponent[] computeValue(Class type) {
-            return type.getRecordComponents();
+        protected List<Function<Record, String>> computeValue(Class<?> type) {
+            return Arrays.stream(type.getRecordComponents())
+                    .<Function<Record, String>>map(recordComponent -> (Record record) ->
+                            '\"' +
+                            recordComponentName(recordComponent) +
+                            "\": " +
+                            escape(invokeAccessor(recordComponent.getAccessor(), record))
+                    ).collect(Collectors.toList());
         }
     };
 
-    private static final Map<RecordComponent, String> recordComponentNameCache = new HashMap<RecordComponent, String>();
-
     public static String toJSON(Record record) {
-        return "{"+ Arrays.stream(getRecordComponentsUsingCache(record))
-                .map(recordComponent -> '\"' +
-                        getRecordComponentNameUsingCache(recordComponent) +
-                        "\": " +
-                        addQuoteIfIsStringTypeComponent(recordComponent) +
-                        invokeAccessor(recordComponent.getAccessor(), record) +
-                        addQuoteIfIsStringTypeComponent(recordComponent)
-                ).collect(Collectors.joining(", "))
-                + " }";
+        return "{" +
+                cache.get(record.getClass())
+                    .stream()
+                    .map(function -> function.apply(record))
+                    .collect(Collectors.joining(", "))
+                    + " }";
+
     }
 
-    private static char addQuoteIfIsStringTypeComponent(RecordComponent recordComponent) {
-        if (recordComponent.getType().equals(String.class)) {
-            return '\"';
-        }
-        return '\0';
+    private static String escape(Object o) {
+        return o instanceof String ? "\"" + o + "\"" : "" + o;
     }
 
     private static Object invokeAccessor(Method accessor, Record record) {
@@ -53,19 +52,6 @@ public class JSONPrinter {
                 throw new RuntimeException(error);
             throw new UndeclaredThrowableException(cause);
         }
-    }
-
-    private static RecordComponent[] getRecordComponentsUsingCache(Record record) {
-        return recordComponentCache.get(record.getClass());
-    }
-
-    private static String getRecordComponentNameUsingCache(RecordComponent recordComponent) {
-        String recordComponentName = recordComponentNameCache.get(recordComponent);
-        if (recordComponentName != null)
-            return recordComponentName;
-        recordComponentName = recordComponentName(recordComponent);
-        recordComponentNameCache.put(recordComponent, recordComponentName);
-        return recordComponentName;
     }
 
     private static String recordComponentName(RecordComponent recordComponent) {
