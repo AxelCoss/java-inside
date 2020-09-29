@@ -2,8 +2,6 @@ package fr.umlv.javainside;
 
 import fr.umlv.javainside.annotation.JSONProperty;
 
-import java.io.UncheckedIOException;
-import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.RecordComponent;
@@ -12,8 +10,17 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public class JSONPrinter {
+
+
+    private static final ClassValue<RecordComponent[]> recordComponentCache = new ClassValue<RecordComponent[]>() {
+        @Override
+        protected RecordComponent[] computeValue(Class type) {
+            return type.getRecordComponents();
+        }
+    };
+
     public static String toJSON(Record record) {
-        return "{"+ Arrays.stream(record.getClass().getRecordComponents())
+        return "{"+ Arrays.stream(getRecordComponentsUsingCache(record))
                 .map(recordComponent -> '\"' +
                         recordComponentName(recordComponent) +
                         "\": " +
@@ -54,5 +61,9 @@ public class JSONPrinter {
         if (jsonPropertyAnnotation.value().equals(""))
             return recordComponent.getName().replace('_', '-');
         return jsonPropertyAnnotation.value();
+    }
+
+    private static RecordComponent[] getRecordComponentsUsingCache(Record record) {
+        return recordComponentCache.get(record.getClass());
     }
 }
