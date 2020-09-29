@@ -51,6 +51,8 @@ public class JSONPrinter {
 
         if (jsonPropertyAnnotation == null)
             return recordComponent.getName();
+        if (jsonPropertyAnnotation.value().equals(""))
+            return recordComponent.getName().replace('_', '-');
         return jsonPropertyAnnotation.value();
     }
 }
