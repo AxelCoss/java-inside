@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="lab3" />
         <module name="lab1" />
         <module name="lab2" />
       </profile>
@@ -14,6 +15,7 @@
       <module name="java-inside" target="15" />
       <module name="lab1" target="15" />
       <module name="lab2" target="15" />
+      <module name="lab3" target="15" />
     </bytecodeTargetLevel>
   </component>
 </project>
