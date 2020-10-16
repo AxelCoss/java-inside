@@ -3,7 +3,7 @@
   <properties>
     <property name="java.specification.version" value="15"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="/home/6if1/acossine/git/java-inside/lab1/target/test-classes:/home/6if1/acossine/git/java-inside/lab1/target/classes:/home/6if1/acossine/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.0/junit-jupiter-api-5.7.0.jar:/home/6if1/acossine/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/6if1/acossine/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/6if1/acossine/.m2/repository/org/junit/platform/junit-platform-commons/1.7.0/junit-platform-commons-1.7.0.jar:/home/6if1/acossine/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.0/junit-jupiter-engine-5.7.0.jar:/home/6if1/acossine/.m2/repository/org/junit/platform/junit-platform-engine/1.7.0/junit-platform-engine-1.7.0.jar:"/>
+    <property name="java.class.path" value="/home/6ifo2/acossine/git/java-inside/lab1/target/test-classes:/home/6ifo2/acossine/git/java-inside/lab1/target/classes:/home/6ifo2/acossine/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.0/junit-jupiter-api-5.7.0.jar:/home/6ifo2/acossine/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/6ifo2/acossine/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/6ifo2/acossine/.m2/repository/org/junit/platform/junit-platform-commons/1.7.0/junit-platform-commons-1.7.0.jar:/home/6ifo2/acossine/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.0/junit-jupiter-engine-5.7.0.jar:/home/6ifo2/acossine/.m2/repository/org/junit/platform/junit-platform-engine/1.7.0/junit-platform-engine-1.7.0.jar:"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
@@ -12,22 +12,22 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="FR"/>
     <property name="sun.boot.library.path" value="/usr/local/apps/alternatives/java/jdk-15/lib"/>
-    <property name="sun.java.command" value="/home/6if1/acossine/git/java-inside/lab1/target/surefire/surefirebooter15783008978928615861.jar /home/6if1/acossine/git/java-inside/lab1/target/surefire 2020-09-29T11-42-05_388-jvmRun1 surefire5753730602544606908tmp surefire_01613997302111923007tmp"/>
+    <property name="sun.java.command" value="/home/6ifo2/acossine/git/java-inside/lab1/target/surefire/surefirebooter16023936235632998180.jar /home/6ifo2/acossine/git/java-inside/lab1/target/surefire 2020-10-13T11-34-29_394-jvmRun1 surefire16142563946362019224tmp surefire_015329953814458360503tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="/home/6if1/acossine/git/java-inside/lab1/target/test-classes:/home/6if1/acossine/git/java-inside/lab1/target/classes:/home/6if1/acossine/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.0/junit-jupiter-api-5.7.0.jar:/home/6if1/acossine/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/6if1/acossine/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/6if1/acossine/.m2/repository/org/junit/platform/junit-platform-commons/1.7.0/junit-platform-commons-1.7.0.jar:/home/6if1/acossine/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.0/junit-jupiter-engine-5.7.0.jar:/home/6if1/acossine/.m2/repository/org/junit/platform/junit-platform-engine/1.7.0/junit-platform-engine-1.7.0.jar:"/>
+    <property name="surefire.test.class.path" value="/home/6ifo2/acossine/git/java-inside/lab1/target/test-classes:/home/6ifo2/acossine/git/java-inside/lab1/target/classes:/home/6ifo2/acossine/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.0/junit-jupiter-api-5.7.0.jar:/home/6ifo2/acossine/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/6ifo2/acossine/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/6ifo2/acossine/.m2/repository/org/junit/platform/junit-platform-commons/1.7.0/junit-platform-commons-1.7.0.jar:/home/6ifo2/acossine/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.0/junit-jupiter-engine-5.7.0.jar:/home/6ifo2/acossine/.m2/repository/org/junit/platform/junit-platform-engine/1.7.0/junit-platform-engine-1.7.0.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
-    <property name="user.home" value="/home/6if1/acossine"/>
+    <property name="user.home" value="/home/6ifo2/acossine"/>
     <property name="user.language" value="fr"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="java.version.date" value="2020-09-15"/>
     <property name="java.home" value="/usr/local/apps/alternatives/java/jdk-15"/>
     <property name="file.separator" value="/"/>
-    <property name="basedir" value="/home/6if1/acossine/git/java-inside/lab1"/>
+    <property name="basedir" value="/home/6ifo2/acossine/git/java-inside/lab1"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/home/6if1/acossine/git/java-inside/lab1/target/surefire/surefirebooter15783008978928615861.jar"/>
+    <property name="surefire.real.class.path" value="/home/6ifo2/acossine/git/java-inside/lab1/target/surefire/surefirebooter16023936235632998180.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="15+36-1562"/>
     <property name="user.name" value="acossine"/>
@@ -36,12 +36,11 @@
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
-    <property name="localRepository" value="/home/6if1/acossine/.m2/repository"/>
+    <property name="localRepository" value="/home/6ifo2/acossine/.m2/repository"/>
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="java.io.tmpdir" value="/tmp"/>
-    <property name="idea.version" value="2020.2.1"/>
     <property name="java.version" value="15"/>
-    <property name="user.dir" value="/home/6if1/acossine/git/java-inside/lab1"/>
+    <property name="user.dir" value="/home/6ifo2/acossine/git/java-inside/lab1"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>

@@ -32,7 +32,6 @@ class LoggerTest {
         logger.log("toto");
     }
 
-
     @Test
     public void logWithNullAsValue() {
         class Foo {}
@@ -40,22 +39,30 @@ class LoggerTest {
         logger.log(null);
     }
 
+//    private static final Logger LOGGER_LAMBDA = Logger.lambdaOf(LoggerBenchMark.class, message -> { /*empty*/ });
+//    private static final Logger LOGGER_RECORD = Logger.recordOf(LoggerBenchMark.Foo.class, message -> { /*empty*/ });
 
-
-/*
     @Test
-    public void loggerShouldLogNothingWhenGivenAnEmptyString() {
-        //var logger = Logger.of()
+    public void lambdaOf() {
+        class Foo {}
+        var logger = Logger.lambdaOf(Foo.class, message -> {
+            assertEquals("toto", message);
+        });
+        logger.log("toto");
+
+        Logger.Implementation.enable(Foo.class, false);
+        logger.log("notToto");
     }
 
     @Test
-    public void loggerShouldLogTheGivenMessageString() {
+    public void recordOf() {
+        class Foo {}
+        var logger = Logger.recordOf(Foo.class, message -> {
+            assertEquals("toto", message);
+        });
+        logger.log("toto");
 
+        Logger.Implementation.enable(Foo.class, false);
+        logger.log("notToto");
     }
-
-    @Test
-    public void loggerShouldThrowAnErrorWhenGivenANullMessage() {
-
-    }
-*/
 }

@@ -26,12 +26,10 @@ public class JSONPrinter {
     };
 
     public static String toJSON(Record record) {
-        return "{" +
-                cache.get(record.getClass())
-                    .stream()
-                    .map(function -> function.apply(record))
-                    .collect(Collectors.joining(", "))
-                    + " }";
+        return cache.get(record.getClass())
+                .stream()
+                .map(function -> function.apply(record))
+                .collect(Collectors.joining(", ", "{", "}"));
 
     }
 
