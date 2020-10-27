@@ -1,10 +1,14 @@
 language: java
-jdk: openjdk15
 
 script:
   - mvn package
 
-os:
-  - linux
-  - osx
+matrix:
+  include:
+    - env: DEPLOY='linux'
+      os: linux
+      jdk: openjdk15
 
+    - env: DEPLOY='macos'
+      os: osx
+      jdk: openjdk15
